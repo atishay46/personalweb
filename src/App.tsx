@@ -10,13 +10,18 @@ function App() {
   const onMouseDown = useCallback((e: any) => {
     if (e.target?.name) {
       console.log('Clicked on object:', e.target.name);
-      // Handle object click here (e.g., open modal, show project preview, etc.)
     }
   }, []);
 
   const onMouseOver = useCallback((e: any) => {
     if (e.target?.name) {
       console.log('Hovering over object:', e.target.name);
+    }
+  }, []);
+
+  const onMouseLeave = useCallback((e: any) => {
+    if (e.target?.name) {
+      console.log('Mouse left object:', e.target.name);
     }
   }, []);
 
@@ -27,6 +32,7 @@ function App() {
         onLoad={onLoad}
         onMouseDown={onMouseDown}
         onMouseOver={onMouseOver}
+        onMouseLeave={onMouseLeave}
       />
     </div>
   );

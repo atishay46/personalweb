@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import React, { useCallback } from 'react';
 import Spline from '@splinetool/react-spline';
 import './App.css';
 

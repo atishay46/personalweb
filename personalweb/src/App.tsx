@@ -5,22 +5,14 @@ import './App.css'
 function App() {
   const [selectedObject, setSelectedObject] = useState<string | null>(null);
 
-  const onLoad = useCallback((splineApp: any) => {
-    console.log('Spline scene loaded')
+  const onLoad = useCallback(() => {
+    // Scene loaded successfully
   }, [])
 
   const onMouseDown = useCallback((e: any) => {
     if (e.target.name) {
       setSelectedObject(e.target.name);
       
-      // Log the clicked object details
-      console.log('Clicked object:', {
-        name: e.target.name,
-        type: e.target.type,
-        uuid: e.target.uuid,
-        position: e.target.position
-      });
-
       // Add hover effect by scaling the object
       e.target.scale.x *= 1.1;
       e.target.scale.y *= 1.1;
